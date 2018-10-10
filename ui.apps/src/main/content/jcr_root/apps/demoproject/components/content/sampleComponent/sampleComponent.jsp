@@ -7,4 +7,4 @@ String result = service.getData();
 %>
 
 <h2>This page invokes the AEM ReadJsonService</h2>
-<h3>RESPONSE: <%=response%></h3>
+<h3>RESPONSE: <%=result%></h3>
