@@ -1,0 +1,95 @@
+<style>
+.first {
+	transition: 0.30s;
+	-webkit-transition: 0.30s;
+	-moz-transition: 0.30s;
+	-o-transition: 0.30s;
+	-ms-transition: 0.30s;
+	font-family: verdana;
+	text-decoration: none;
+	color: white;
+	background-color: #81e55c;
+	padding: 9px;
+	border-radius: 10px;
+	box-shadow: 2px 2px 2px black;
+}
+
+.first:hover {
+	background-color: #a5f488;
+}
+
+.first:active {
+	box-shadow: 0px 0px 0px black;
+}
+
+.second {
+	transition: 0.30s;
+	-webkit-transition: 0.30s;
+	-moz-transition: 0.30s;
+	-o-transition: 0.30s;
+	-ms-transition: 0.30s;
+	font-family: verdana;
+	text-decoration: none;
+	color: white;
+	background-color: #c0362c;
+	padding: 9px;
+	border-radius: 10px;
+	box-shadow: 2px 2px 2px black;
+}
+
+.second:hover {
+	background-color: #db7f7f;
+}
+
+.second:active {
+	box-shadow: 0px 0px 0px black;
+}
+
+video {
+	-webkit-transition: 0.60s;
+	-moz-transition: 0.60s;
+	-o-transition: 0.60s;
+	-ms-transition: 0.60s;
+	border: 1px solid black;
+	box-shadow: 0px 0px 10px black;
+}
+
+video:hover {
+	box-shadow: 0px 0px 20px black;
+}
+</style>
+
+<script>
+	window.onload = function() {
+		var video = document.getElementById('my-video');
+		var play = document.getElementById('play');
+		var pause = document.getElementById('pause');
+
+		// associate functions with the 'onclick' events
+		play.onclick = playVideo;
+		pause.onclick = pauseVideo;
+
+		function playVideo(e) {
+			e.preventDefault();
+			video.play();
+		}
+
+		function pauseVideo(e) {
+			e.preventDefault();
+			video.pause();
+		}
+	}
+</script>
+
+<body bgcolor="${properties.bgColor}">
+	<center>
+		<video style="background-color: ${properties.bgColor}" preload="auto"
+			width="480" height="270" id="my-video">
+			<source src="${properties.link}">
+		</video>
+		<br> <br>
+		<div>
+			<a class="first" href="#" id="play">${properties.play}</a> <a
+				class="second" href="#" id="pause">${properties.pause}</a>
+		</div>
+	</center>
