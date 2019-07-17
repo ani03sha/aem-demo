@@ -146,6 +146,9 @@ public class CustomScheduler implements Runnable {
 			
 			log.info("Scheduler is disabled");
 			
+			// In case the enabled button is unchecked then we remove the scheduler
+			removeScheduler();
+			
 		}
 	}
 	
