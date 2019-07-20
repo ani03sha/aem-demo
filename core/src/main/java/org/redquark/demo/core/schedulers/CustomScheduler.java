@@ -73,7 +73,7 @@ public class CustomScheduler implements Runnable {
 		/**
 		 * Removing the scheduler
 		 */
-		removeScheduler();
+		removeScheduler(config);
 		
 		/**
 		 * Updating the scheduler id
@@ -96,20 +96,20 @@ public class CustomScheduler implements Runnable {
 		/**
 		 * Removing the scheduler
 		 */
-		removeScheduler();
+		removeScheduler(config);
 	}
 	
 	/**
 	 * This method removes the scheduler
 	 */
-	private void removeScheduler() {
+	private void removeScheduler(SlingSchedulerConfiguration config) {
 		
 		log.info("Removing scheduler: {}", schedulerId);
 		
 		/**
 		 * Unscheduling/removing the scheduler
 		 */
-		scheduler.unschedule(String.valueOf(schedulerId));
+		scheduler.unschedule(config.schdulerName());
 	}
 	
 	/**
@@ -147,7 +147,7 @@ public class CustomScheduler implements Runnable {
 			log.info("Scheduler is disabled");
 			
 			// In case the enabled button is unchecked then we remove the scheduler
-			removeScheduler();
+			removeScheduler(config);
 			
 		}
 	}
