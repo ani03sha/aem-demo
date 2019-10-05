@@ -1,0 +1,15 @@
+<form>  
+   Email:<input type="text" id = "email" name="email"/><br/><br/>  
+   <input type="button" value="Subscribe" onclick="subscribe()"/>  
+</form> 
+
+<script>
+	function subscribe(e) {
+    	var email = document.getElementById("email").value;
+		$.ajax({     
+			type : "POST",     
+    		url : "/bin/register",     
+    		data : "email=" + email
+    	});
+    }
+</script>
